@@ -20,4 +20,4 @@ This should be accomplished in [the Data Project](https://github.com/mludovico/s
 The [WebAPI project](https://github.com/mludovico/salao_marcelo_netcore/tree/master/Salao%20Marcelo) will hold the controllers and all the configuration for adding dependency injection, swagger and logging support.
   
 ### Finally (because it is not TDD) I wish to learn a little about unit tests
-Making use of NUnit I will create a [Test Project](https://github.com/mludovico/salao_marcelo_netcore/tree/master/Salao%20Marcelo.Tests) to create my first unit test functions, just for learning purposes.
+Making use of NUnit I will create a [Test Project](https://github.com/mludovico/salao_marcelo_netcore/tree/master/Salao%20Marcelo.Tests) to add my first unit test functions, just for learning purposes.
