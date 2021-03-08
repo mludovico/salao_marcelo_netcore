@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salao Marcelo.Domain", "Sal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salao Marcelo.Data", "Salao Marcelo.Data\Salao Marcelo.Data.csproj", "{33298533-A500-44DB-B31B-82A05D6CE620}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salao Marcelo.CLI", "Salao Marcelo.Console\Salao Marcelo.CLI.csproj", "{34078B01-C9F4-44B1-A60A-902B06739858}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salao Marcelo.CLI", "Salao Marcelo.CLI\Salao Marcelo.CLI.csproj", "{34078B01-C9F4-44B1-A60A-902B06739858}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salao Marcelo.Tests", "Salao Marcelo.Tests\Salao Marcelo.Tests.csproj", "{3DCAB963-2022-4D8B-8694-AD9F30887543}"
 EndProject
