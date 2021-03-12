@@ -5,6 +5,7 @@ namespace Salao_Marcelo.Data.Maps
     {
         public CashFlowMap()
         {
+
         }
     }
 }

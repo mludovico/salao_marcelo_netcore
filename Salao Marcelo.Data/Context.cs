@@ -12,7 +12,7 @@ namespace Salao_Marcelo.Data
         public DbSet<Professional> Professionals { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Service> Services { get; set; }
-        public DbSet<CashFlow> CashFlows { get; set; }
+        public DbSet<Cashier> CashFlows { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

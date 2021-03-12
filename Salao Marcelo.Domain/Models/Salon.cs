@@ -10,7 +10,7 @@ namespace Salao_Marcelo.Domain
 		public List<Client> Clients { get; set; }
 		public List<Appointment> Appointments { get; set; }
 		public List<Service> Services { get; set; }
-		public CashFlow Cash { get; set; }
+		public Cashier Cashier { get; set; }
 
 		public Salon()
 		{
@@ -18,7 +18,7 @@ namespace Salao_Marcelo.Domain
 			Clients = new List<Client>();
 			Appointments = new List<Appointment>();
 			Services = new List<Service>();
-			Cash = new CashFlow();
+			Cashier = new Cashier();
 		}
 
 		public void Add<T>(T entity)
