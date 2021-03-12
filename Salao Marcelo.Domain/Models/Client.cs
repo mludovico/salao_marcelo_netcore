@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Salao_Marcelo.Domain
 {
-	public class Client
+	public class Client : IEntity
 	{
 		public int Id { get; set; }
 		public string Name { get; set; }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Salao_Marcelo.Domain
 {
-	public class Appointment
+	public class Appointment : IEntity
 	{
 		public int Id { get; set; }
 		public DateTime Scheduledtime { get; set; }
@@ -24,7 +24,7 @@ namespace Salao_Marcelo.Domain
 			}
 		}
 
-		private void Finish(CashFlow cash)
+		private void Finish(Cashier cash)
 		{
 			cash.Receive(Service.Price);
 			cash.Pay(Professional.Commission * Service.Price);

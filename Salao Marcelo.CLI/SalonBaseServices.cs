@@ -68,5 +68,14 @@ namespace Salao_Marcelo.CLI
             }
         }
 
+        public static void RemoveClientOptions(Salon salon)
+        {
+
+        }
+
+        public static void RemoveServiceOptions(Salon salon)
+        {
+
+        }
     }
 }

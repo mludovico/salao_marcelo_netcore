@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Salao_Marcelo.Domain;
 
-public class Professional
+public class Professional : IEntity
 {
     public int Id { get; set; }
     public string Name { get; set; }
