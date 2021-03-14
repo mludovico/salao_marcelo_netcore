@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
+using Salao_Marcelo.Data.Maps;
 using Salao_Marcelo.Domain;
 
 namespace Salao_Marcelo.Data
@@ -16,7 +17,11 @@ namespace Salao_Marcelo.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new AppointmentMap());
+            modelBuilder.ApplyConfiguration(new CashFlowMap());
             modelBuilder.ApplyConfiguration(new ClientMap());
+            modelBuilder.ApplyConfiguration(new ProfessionalMap());
+            modelBuilder.ApplyConfiguration(new ServiceMap());
             base.OnModelCreating(modelBuilder);
         }
     }

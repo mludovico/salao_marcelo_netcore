@@ -16,12 +16,6 @@ namespace Salao_Marcelo.Data.Maps
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Scheduledtime)
                 .IsRequired();
-            builder.Property(x => x.Service)
-                .IsRequired();
-            builder.Property(x => x.Professional)
-                .IsRequired();
-            builder.Property(x => x.Client)
-                .IsRequired();
             builder.HasOne(x => x.Professional);
             builder.HasOne(x => x.Client);
             builder.HasOne(x => x.Service);
