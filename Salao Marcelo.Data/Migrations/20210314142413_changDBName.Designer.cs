@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Salao_Marcelo.Data;
 
 namespace Salao_Marcelo.Data.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20210314142413_changDBName")]
+    partial class changDBName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -79,6 +81,18 @@ namespace Salao_Marcelo.Data.Migrations
                     b.ToTable("Appointment");
                 });
 
+            modelBuilder.Entity("Salao_Marcelo.Domain.Cashier", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CashFlows");
+                });
+
             modelBuilder.Entity("Salao_Marcelo.Domain.Client", b =>
                 {
                     b.Property<int>("Id")
@@ -110,6 +124,12 @@ namespace Salao_Marcelo.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("CashierId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CashierId1")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("Timestamp")
                         .HasColumnType("datetime");
 
@@ -118,31 +138,11 @@ namespace Salao_Marcelo.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CashierId");
+
+                    b.HasIndex("CashierId1");
+
                     b.ToTable("CashFlow");
-                });
-
-            modelBuilder.Entity("Salao_Marcelo.Domain.Models.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Mail")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("Salao_Marcelo.Domain.Service", b =>
@@ -180,6 +180,17 @@ namespace Salao_Marcelo.Data.Migrations
                     b.HasOne("Salao_Marcelo.Domain.Service", "Service")
                         .WithMany()
                         .HasForeignKey("ServiceId");
+                });
+
+            modelBuilder.Entity("Salao_Marcelo.Domain.Models.CashFlow", b =>
+                {
+                    b.HasOne("Salao_Marcelo.Domain.Cashier", null)
+                        .WithMany("Income")
+                        .HasForeignKey("CashierId");
+
+                    b.HasOne("Salao_Marcelo.Domain.Cashier", null)
+                        .WithMany("Outcome")
+                        .HasForeignKey("CashierId1");
                 });
 #pragma warning restore 612, 618
         }
